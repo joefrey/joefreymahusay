@@ -1,7 +1,27 @@
 body {
   font-family: var(--font-family-sans-serif);
   line-height: 1.5;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  border-left: 15px solid #eee;
+  border-right: 15px solid #eee; }
+  @media screen and (max-width: 768px) {
+    body {
+      border-left: none;
+      border-right: none; } }
+  body:before, body:after {
+    content: "";
+    position: fixed;
+    background: #eee;
+    left: 0;
+    right: 0;
+    height: 15px; }
+    @media screen and (max-width: 768px) {
+      body:before, body:after {
+        display: none; } }
+  body:before {
+    top: 0; }
+  body:after {
+    bottom: 0; }
 
 .cover {
   background-size: cover;
@@ -14,8 +34,27 @@ body {
 .social a {
   font-size: 2rem;
   display: inline-block;
-  padding: 20px; }
+  padding: 20px;
+  -webkit-transition: .3s all ease-in-out;
+  -o-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  position: relative; }
   .social a:first-child {
     padding-left: 0; }
   .social a:hover {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5); }
+  .social a:hover {
     text-decoration: none; }
+  .social a.dribbble {
+    color: #ea4c89; }
+  .social a.twitter {
+    color: #1da1f2; }
+  .social a.github {
+    color: #333; }
+  .social a.email {
+    color: #ffa930; }
